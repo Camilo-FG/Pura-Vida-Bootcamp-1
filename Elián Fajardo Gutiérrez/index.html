@@ -5,35 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Órbita Stellar</title>
   <link rel="stylesheet" href="styles.css">
+  <script type="importmap">
+    {
+      "imports": {
+        "react": "https://esm.sh/react@19.2.0",
+        "react-dom/client": "https://esm.sh/react-dom@19.2.0/client?deps=react@19.2.0"
+      }
+    }
+  </script>
   <script defer src="https://unpkg.com/@stellar/varial-sdk@7.0.0/build/index.min.js"></script>
   <script type="module" src="app.js"></script>
 </head>
 <body>
-  <main>
-    <header>
-      <span class="brand">◉ Órbita Stellar</span>
-      <span class="mode">Solo lectura</span>
-    </header>
-    <h1>Tu cuenta en Stellar</h1>
-    <p class="intro">Conecta tu wallet para consultar tu dirección pública y el saldo de lumens (XLM).</p>
-    <section aria-labelledby="wallet-title">
-      <h2 id="wallet-title">Wallet Stellar</h2>
-      <p class="provider">Varial / Freighter</p>
-      <div id="account" hidden>
-        <dl>
-          <dt>Red</dt><dd id="network"></dd>
-          <dt>Dirección pública</dt><dd id="address" class="address"></dd>
-          <dt>Saldo</dt><dd id="balance" class="balance"></dd>
-        </dl>
-      </div>
-      <div class="actions">
-        <button id="connect" type="button">Conectar wallet</button>
-        <button id="refresh" type="button" hidden>Actualizar</button>
-        <button id="disconnect" type="button" hidden>Desconectar</button>
-      </div>
-      <p id="status" role="status"></p>
-      <a id="install" href="https://www.freighter.app/" hidden>Obtener la extensión</a>
-    </section>
-  </main>
+  <div id="root"><p role="status">Cargando Órbita Stellar…</p></div>
+  <noscript>Activa JavaScript para usar Órbita Stellar.</noscript>
 </body>
 </html>
