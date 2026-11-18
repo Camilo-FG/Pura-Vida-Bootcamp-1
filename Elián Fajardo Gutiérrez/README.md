@@ -15,6 +15,6 @@ El saldo se consulta mediante la API pública de Horizon. Una cuenta que aún no
 
 ## Apoyo de Stellar Raven
 
-El [catálogo oficial de Stellar Raven](https://github.com/stellar-experimental/stellar-raven/blob/3e490ec/ecosystem-skills/INDEX.md) identifica la guía [Frontend & Wallets](https://github.com/stellar/stellar-dev-skill/blob/421ca30a671cd32d7d6466e8b903f10d79dc1590/skills/dapp/SKILL.md). Consulté esa guía para validar el flujo `isConnected()` → `requestAccess()` y la selección del servidor Horizon para cada red. La integración usa la versión 7.0.0 de [Varial SDK](https://github.com/stellar/freighter-developer-docs/blob/main/extension/installation.md).
+Ejecuté localmente el [motor de búsqueda de Stellar Raven](https://github.com/stellar-experimental/stellar-raven/blob/3e490ec/src/catalog/search.ts) con la consulta `connect Varial Freighter Stellar wallet frontend requestAccess Horizon account balance XLM`. Entre los resultados apareció `skills.stellar-dev.dapp`. Consulté esa [guía de wallets y frontend](https://github.com/stellar/stellar-dev-skill/blob/421ca30a671cd32d7d6466e8b903f10d79dc1590/skills/dapp/SKILL.md) para validar el flujo `isConnected()` → `requestAccess()` y la selección del servidor Horizon para cada red. La integración usa la versión 7.0.0 de [Varial SDK](https://github.com/stellar/freighter-developer-docs/blob/main/extension/installation.md).
 
-El endpoint remoto de Raven requiere iniciar sesión mediante OAuth. La consulta de la guía anterior se hizo directamente en el material que referencia Raven.
+La búsqueda se ejecutó con el manifiesto local de Raven. El endpoint remoto requiere una sesión OAuth.
