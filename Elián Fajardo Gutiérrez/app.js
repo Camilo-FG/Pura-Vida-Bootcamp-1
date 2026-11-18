@@ -17,7 +17,7 @@ function setConnected(connected) {
   disconnect.hidden = !connected;
 }
 
-async function syncWallet(requestAccess) {
+async function syncWallet() {
   connect.disabled = refresh.disabled = disconnect.disabled = true;
   status.textContent = "Consultando la wallet…";
   install.hidden = true;
@@ -32,8 +32,10 @@ async function syncWallet(requestAccess) {
       throw new Error("Activa la extensión de Varial / Freighter en este navegador.");
     }
 
-    const result = await (requestAccess ? wallet.requestAccess() : wallet.getAddress());
+    const result = await wallet.requestAccess();
     if (result.error || !/^G[A-Z2-7]{55}$/.test(result.address ?? "")) {
+      setConnected(false);
+      address.textContent = network.textContent = "";
       throw new Error("No se recibió una dirección pública. Desbloquea la wallet y autoriza el acceso.");
     }
 
@@ -60,8 +62,8 @@ async function syncWallet(requestAccess) {
   }
 }
 
-connect.addEventListener("click", () => syncWallet(true));
-refresh.addEventListener("click", () => syncWallet(false));
+connect.addEventListener("click", syncWallet);
+refresh.addEventListener("click", syncWallet);
 disconnect.addEventListener("click", async () => {
   disconnect.disabled = refresh.disabled = true;
   try {
